@@ -2,9 +2,12 @@ import React from 'react'
 import arrow from '../media/images/icon-arrow.svg'
 import {initialize} from './Map';
 
+
 export default function Input() {
+  
   function handleQuery() {
-    var url = "https://geo.ipify.org/api/v2/country,city?apiKey=at_lwfjpg2qRtQ03mSChN3p36qrjiy0s&ipAddress=";
+    var json = require('./secret.json');
+    var url = `https://geo.ipify.org/api/v2/country,city?apiKey=${json.APIKEY}&ipAddress=`;
     var box = document.getElementById("inputip").value;
     var Ip = document.getElementById("ip");
     var loc = document.getElementById("loc");
@@ -18,8 +21,6 @@ export default function Input() {
       var i = JSON.parse(response);
       var lati = i.location.lat;
       var long = i.location.lng;
-      
-      console.log(latitude,longitude);
       initialize(lati,long);
       Ip.innerHTML = i.ip;
       isp.innerHTML = i.isp

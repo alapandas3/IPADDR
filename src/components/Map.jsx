@@ -1,23 +1,28 @@
-import React, { useRef } from "react";
+import React, { useRef,useState } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-let latitude=51.505;
-let  longitude=-0.09;
-const arr = []
+
+let latitude = 22.571571729784605 ;
+let longitude = 88.42824612753667;
+let mapRef = null;
+
 export function initialize(a, b) {
-  arr.push(a);
-  arr.push(b);
+  if (mapRef.current) {
+    mapRef.current.setView([latitude, longitude], mapRef.current.getZoom());
+  }
 }
-console.log(arr)
 export default function Map() {
-  const mapRef = useRef(null);
+  mapRef = useRef(null);
+  const [coordinates, setCoordinates] = useState({ latitude: 53, longitude: 22 });
+  
+  
   return (
-    <MapContainer center={[arr[0],arr[1]]} zoom={13} ref={mapRef} style={{ height: "57vh", width: "100vw" }}>
+    <MapContainer center={[coordinates.latitude, coordinates.longitude]} zoom={13} ref={mapRef} style={{ height: "57vh", width: "100vw" }}>
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution=''
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      {/* Additional map layers or components can be added here */}
+      
     </MapContainer>
   )
 }
