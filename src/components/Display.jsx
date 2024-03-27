@@ -6,19 +6,19 @@ export default function Display() {
     <div className='z-99 grid grid-cols-xx shadow-lg bg-white rounded-2xl p-2 m-14  w-3/4'>
         <div className='flex flex-col text-center justify-center    '>
             <p className='text-grey text-gray-400 font-semibold text-xs'>IP Address</p>
-            <p id='ip' className='text-lg text-black font-semibold'>ip</p>
+            <p id='ip' className='text-lg text-black font-semibold'>&nbsp;</p>
         </div>
         <div className='flex flex-col text-center justify-center'>
             <p className='text-grey text-gray-400 font-semibold text-xs'>Location</p>
-            <p id='loc' className='text-lg text-black font-semibold'>loc</p>
+            <p id='loc' className='text-lg text-black font-semibold'>&nbsp;</p>
         </div>
         <div className='flex flex-col text-center justify-center'>
             <p className='text-grey text-gray-400 font-semibold text-xs'>Timezone</p>
-            <p id='time' className='text-lg text-black font-semibold'>time</p>
+            <p id='time' className='text-lg text-black font-semibold'>&nbsp;</p>
         </div>
         <div className='flex flex-col text-center justify-center'>
             <p className='text-grey text-gray-400 font-semibold text-xs'>ISP</p>
-            <p id='isp' className='text-lg text-black font-semibold'>isp</p>
+            <p id='isp' className='text-lg text-black font-semibold'>&nbsp;</p>
         </div>
     </div>
     </>
